@@ -1,0 +1,25 @@
+
+{%  extends 'library/base.html' %}
+{% load static %}
+{% block content %}
+
+<br>
+<div class="container pt-5 mt-5" >
+<div class="row">
+	<div class="col-md-12">
+		<div class=" card-body">
+            <div class="">
+                <h2 class="card-title">You have Successfully Logged out</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <a href="{%url 'index'%}" class="btn btn-primary btn-lg"> Back</a>
+                    </div>
+                </div>
+                
+            </div>
+            
+		</div>
+	</div>
+</div>
+</div>
+{% endblock %}

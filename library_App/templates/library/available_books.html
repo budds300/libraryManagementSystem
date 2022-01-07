@@ -1,0 +1,21 @@
+{% extends 'library/base2.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row pt-5 mt-5">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 p-3">
+            <div class="card">
+                <img src="{{books.book_image.url}}" alt="" class="img-fluid">
+                <div class="card-body">
+                    <h3 class="card-text text-center "><strong>{{books.name}}</strong> </h3>
+                    <p class="card-text"> <strong>Bio: </strong>- {{books.bio}} </p>
+                    <p>Author -{{books.author}}</p>                    
+                </div>
+            </div>
+            
+        </div>
+    </div>  
+</div>
+
+{% endblock %}

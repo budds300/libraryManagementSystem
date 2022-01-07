@@ -1,0 +1,28 @@
+{% extends 'library/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row pt-5 mt-5">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 p-3">
+            <div class="card">
+                <img src="{{books.book_image.url}}" alt="" class="img-fluid">
+                <div class="card-body">
+                    <p class="card-text">Book Name -{{books.name}}</p>
+                    <p class="card-text">bio - {{books.bio}}</p>
+                    
+                    <p>Author -{{books.author}}</p>
+                    
+                        <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'update_books' books.id%}">Update</a>
+                        <!-- <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'delete_books' books.id %}">Delete</a> -->
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        
+    </div>
+  
+</div>
+{% endblock %}

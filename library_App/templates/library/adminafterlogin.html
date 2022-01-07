@@ -1,0 +1,55 @@
+
+{%  extends 'library/base.html' %}
+{% load static %}
+{% block content %}
+    
+  
+   
+    
+    <h1 class="display-4 mt-5 pt-5 text-center">Hello {{user.first_name}} !</h1>
+    <p class="lead">As you are Admin, you can add a book to library, view available book in library,
+       Issue books to students,
+      View issued book to students and many more ... !
+
+    </p>
+    <p>Option Available For You</p>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-2">
+          <a href="addbook" class="btn btn-info">Add Book To Library</a>
+        </div>
+        <div class="col-md-2"><a href="viewbook" class="btn btn-info" >View Available Book</a></div>
+      
+      <div class="col-md-2"> <a href="issuebook" class="btn btn-info" >Issue New Book</a></div>
+      <div class="col-md-2"><a href="viewissuedbook" class="btn btn-info" >View Issued Book</a></div>
+      <div class="col-md-2"> <a href="viewstudent" class="btn btn-info">View Student</a></div>
+      <div class="col-md-1"></div>
+    </div>
+    </div>
+    <hr class="my-4">
+    <div class="container">
+      <div class="row">
+    {% for book in books  %}
+          <div class="col-md-4 p-3">
+            <div class="card">
+              <img src="{{book.book_image.url}}" alt="" class="img-fluid">
+              <div class="card-body">
+                <a href="{% url 'single_book' book.pk %}"><p class="card-text">{{book.name}}</p></a>
+                <p class="card-text">{{book.author}}</p>
+              </div>
+            </div>
+          </div> 
+      {% endfor %}
+    </div>
+  </div>
+      
+      
+  
+
+
+    
+
+
+    {% include "library/footer.html" %}
+    {% endblock %}
